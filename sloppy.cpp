@@ -5,21 +5,6 @@
 #include <cstdlib>
 #include <sys/wait.h>
 
-/*typedef unsigned long long cycles_t;
-
-inline cycles_t currentcycles()
-{
-    cycles_t result;
-    __asm__ __volatile__ ("rdtsc" : "=A" (result));
-
-    return result;
-}
- cycles_t t1,t2;
-    t1=currentcycles();
-    sleep(1);
-    t2=currentcycles();
-    printf("%lld\n",(t2-t1)/1000000);*/
-
 #define NUMCPUS 4
 #define N 4
 #define stride 100000
@@ -96,15 +81,7 @@ int main(){
         pthread_join(tid[i],NULL);
     }
     gettimeofday(&tv_end,NULL);
-    printf("use=%ldm %ldus\n",tv_end.tv_sec-tv_begin.tv_sec,tv_end.tv_usec-tv_begin.tv_usec);
+    printf("use=%ldus\n",tv_end.tv_usec-tv_begin.tv_usec);
     printf("%d\n",t.global);
-    int s;
-    struct timeval sbegin,send;
-    gettimeofday(&sbegin,NULL);
-    for(int i=0;i<400000;++i){
-        s++;
-    }
-    gettimeofday(&send,NULL);
-    printf("single use=%ld\n",send.tv_usec-sbegin.tv_usec);
-
+  
 }
