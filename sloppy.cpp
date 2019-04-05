@@ -50,7 +50,7 @@ int get(count_t* c){
 }
 void* thread(void* arg){
     pass tmp=*(pass*)arg;
-    cpu_set_t cpuset;
+    cpu_set_t cpuset;           //将四个线程分别分配到四个CPU上执行
     CPU_ZERO(&cpuset);
     CPU_SET(tmp.id,&cpuset);
     pthread_t thread;
