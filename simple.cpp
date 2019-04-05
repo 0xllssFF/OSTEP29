@@ -1,3 +1,10 @@
+#include <stdio.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <cstdlib>
+#include <sys/wait.h>
+
 #define N 2
 
 struct conut{
