@@ -1,4 +1,7 @@
-Concurrent BST-tree 
+Concurrent BST-tree
+reference:
+H. T. Kung, Philip L. Lehman:
+Concurrent Manipulation of Binary Search Trees. ACM Trans. Database Syst. 5(3): 354-382 (1980)
 
 procedure find(n,v)
 	f=n;
